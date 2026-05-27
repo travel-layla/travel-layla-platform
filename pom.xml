@@ -15,7 +15,6 @@
     <modules>
         <module>platform-bom</module>
         <module>platform-common</module>
-        <module>platform-contracts</module>
     </modules>
 
     <properties>
