@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package layla.user.v1;
+
+option java_multiple_files = true;
+
+option java_package =
+        "com.layla.contracts.user.v1";
+
+option java_outer_classname =
+        "UserProto";
+
+import "common/v1/pagination.proto";
+
+message GetUserRequest {
+
+  string user_id = 1;
+}
+
+message UserResponse {
+
+  string id = 1;
+
+  string email = 2;
+
+  string full_name = 3;
+}
+
+message GetUsersRequest {
+
+  layla.common.v1.PaginationRequest
+      pagination = 1;
+}
+
+message GetUsersResponse {
+
+  repeated UserResponse items = 1;
+
+  layla.common.v1.PaginationResponse
+      pagination = 2;
+}
+
+service UserService {
+
+  rpc GetUser(GetUserRequest)
+      returns (UserResponse);
+
+  rpc GetUsers(GetUsersRequest)
+      returns (GetUsersResponse);
+}

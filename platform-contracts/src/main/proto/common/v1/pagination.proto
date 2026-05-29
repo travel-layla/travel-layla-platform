@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package layla.common.v1;
+
+option java_multiple_files = true;
+
+option java_package =
+        "com.layla.contracts.common.v1";
+
+option java_outer_classname =
+        "PaginationProto";
+
+message PaginationRequest {
+
+  int32 page = 1;
+
+  int32 size = 2;
+}
+
+message PaginationResponse {
+
+  int64 total = 1;
+
+  int32 page = 2;
+
+  int32 size = 3;
+}

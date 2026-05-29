@@ -1,0 +1,4 @@
+message UserCreatedEvent {
+  string user_id = 1;
+  string email = 2;
+}
